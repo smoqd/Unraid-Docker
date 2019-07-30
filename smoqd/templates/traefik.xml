@@ -67,6 +67,46 @@
       <Name>traefik.frontend.rule</Name>
       <Mode/>
     </Label>
+    <Label>
+      <Value>8096</Value>
+      <Name>traefik.port</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>Traefik-Admin</Value>
+      <Name>traefik.backend</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>https</Value>
+      <Name>traefik.frontend.entryPoints</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.forceSTSHeader</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>315360000</Value>
+      <Name>traefik.frontend.headers.STSSeconds</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.STSIncludeSubdomains</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.STSPreload</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.enable</Name>
+      <Mode/>
+    </Label>
   </Labels>
   <Config Name="Trarfic dashboard" Target="" Default="8081" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8081</Config>
   <Config Name="docker.sock" Target="/var/run/docker.sock" Default="" Mode="rw" Description="Docker watch socket" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
