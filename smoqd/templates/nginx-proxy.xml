@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>nginx-proxy</Name>
+  <Repository>jwilder/nginx-proxy</Repository>
+  <Registry>https://hub.docker.com/r/jwilder/nginx-proxy/~/dockerfile/</Registry>
+  <Network>nginx-proxy</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/jwilder/nginx-proxy/</Support>
+  <Project/>
+  <Overview>Automated Nginx reverse proxy for docker containers[br][br][b]Converted By Community Applications[/b][br][br]Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/smoqd/Unraid-Docker/master/smoqd/img/nginx-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1564460786</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Automated Nginx reverse proxy for docker containers[br][br][b]Converted By Community Applications[/b][br][br]Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>nginx-proxy</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8443</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nginx-proxy/certs</HostDir>
+      <ContainerDir>/etc/nginx/certs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nginx-proxy/dhparam</HostDir>
+      <ContainerDir>/etc/nginx/dhparam</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/var/run/docker.sock</HostDir>
+      <ContainerDir>/tmp/docker.sock</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nginx-proxy/vhosts.d/</HostDir>
+      <ContainerDir>/etc/nginx/vhost.d</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appfiles/nginx-proxy/logs/</HostDir>
+      <ContainerDir>/var/log/nginx</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>0.7.4</Value>
+      <Name>DOCKER_GEN_VERSION</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>unix:///tmp/docker.sock</Value>
+      <Name>DOCKER_HOST</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Certificate path" Target="/etc/nginx/certs" Default="" Mode="rw" Description="Container Path: /etc/nginx/certs" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nginx-proxy/certs</Config>
+  <Config Name="Host Path 2" Target="/etc/nginx/dhparam" Default="" Mode="rw" Description="Container Path: /etc/nginx/dhparam" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nginx-proxy/dhparam</Config>
+  <Config Name="Key 1" Target="DOCKER_GEN_VERSION" Default="0.7.4" Mode="" Description="Container Variable: DOCKER_GEN_VERSION" Type="Variable" Display="always" Required="false" Mask="false">0.7.4</Config>
+  <Config Name="Key 2" Target="DOCKER_HOST" Default="unix:///tmp/docker.sock" Mode="" Description="Container Variable: DOCKER_HOST" Type="Variable" Display="always" Required="false" Mask="false">unix:///tmp/docker.sock</Config>
+  <Config Name="docker.sock" Target="/tmp/docker.sock" Default="" Mode="ro" Description="access to the host&#x2019;s Docker socket, which contains information about a variety of Docker events, such as creating a new container, or shutting one down." Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="vhosts.d" Target="/etc/nginx/vhost.d" Default="" Mode="rw" Description="nginx vhosts config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nginx-proxy/vhosts.d/</Config>
+  <Config Name="http" Target="80" Default="" Mode="tcp" Description="http port" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
+  <Config Name="https" Target="443" Default="" Mode="tcp" Description="https port" Type="Port" Display="always" Required="false" Mask="false">8443</Config>
+  <Config Name="Nginx-Proxy Logs" Target="/var/log/nginx" Default="" Mode="rw" Description="Container Path: /var/log/nginx" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appfiles/nginx-proxy/logs/</Config>
+</Container>
